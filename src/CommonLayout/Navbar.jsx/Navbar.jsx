@@ -12,9 +12,9 @@ const Navbar = () => {
                     </label>
                     <ul tabIndex={0} className="menu  menu-compact dropdown-content mt-3 p-2 shadow bg-sky-500 rounded-box w-52">
                         <li><NavLink className={({ isActive, isPending }) => isActive ? "active" : isPending ? "pending" : "" } to='/'>Home</NavLink ></li>
-                        <li><NavLink to='/about'>About</NavLink ></li>
-                        <li><NavLink to='/blog'>Blogs</NavLink ></li>
-                        <li><NavLink to='/blogs'>Blogs</NavLink ></li>
+                        <li><NavLink className={({ isActive, isPending }) => isActive ? "active" : isPending ? "pending" : "" } to='/about'>About</NavLink ></li>
+                        <li><NavLink className={({ isActive, isPending }) => isActive ? "active" : isPending ? "pending" : "" } to='/blog'>Blogs</NavLink ></li>
+                        <li><NavLink className={({ isActive, isPending }) => isActive ? "active" : isPending ? "pending" : "" } to='/blogs'>Blogs</NavLink ></li>
                     </ul>
                 </div>
                 <Link to='/home' className="btn btn-ghost normal-case text-xl">Chef Cuisine Explorer</Link>
@@ -22,10 +22,10 @@ const Navbar = () => {
             
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
-                    <li><Link to='/'>Home</Link></li>
-                    <li><Link to='/about'>About</Link></li>
-                    <li><Link to='/blog'>Blogs</Link></li>
-                    <li><Link to='/blogs'>Blogs</Link></li>
+                    <li><NavLink className={({ isActive, isPending }) => isActive ? "active" : isPending ? "pending" : "" } to='/'>Home</NavLink></li>
+                    <li><NavLink className={({ isActive, isPending }) => isActive ? "active" : isPending ? "pending" : "" } to='/about'>About</NavLink></li>
+                    <li><NavLink className={({ isActive, isPending }) => isActive ? "active" : isPending ? "pending" : "" } to='/blog'>Blogs</NavLink></li>
+                    <li><NavLink className={({ isActive, isPending }) => isActive ? "active" : isPending ? "pending" : "" } to='/blogs'>Blogs</NavLink></li>
                 </ul>
             </div>
 
