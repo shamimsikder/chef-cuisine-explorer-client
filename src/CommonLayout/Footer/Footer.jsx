@@ -9,9 +9,10 @@ const Footer = () => {
             <div className='w-full max-w-6xl mx-auto flex gap-10 flex-col justify-center items-center'>
 
                 <div className="flex gap-4">
-                    <Link className="link link-hover">About us</Link> 
-                    <Link className="link link-hover">Contact</Link> 
+                    <Link to="/about" className="link link-hover">About us</Link> 
+                    <Link className="link link-hover">Contact Us</Link> 
                     <Link className="link link-hover">Jobs</Link> 
+                    <Link to="/blogs" className="link link-hover">Blogs</Link> 
                 </div> 
                 
                 <div className="flex gap-4 md:place-self-center md:justify-self-end">
