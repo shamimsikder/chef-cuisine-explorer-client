@@ -7,7 +7,10 @@ const Common = () => {
     return (
         <div>
             <Navbar/>
+            <div className='min-h-[calc(100vh-336px)]'>
+
             <Outlet/>
+            </div>
             <Footer/>
         </div>
     );
