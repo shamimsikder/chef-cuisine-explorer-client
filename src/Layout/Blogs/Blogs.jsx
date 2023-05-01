@@ -28,8 +28,16 @@ const Blogs = () => {
                     </div>
                     <div className=''>
                         <h3 className=' text-2xl font-semibold mb-4'>How to validate React props using PropTypes?</h3>
-                        <p>An uncontrolled component is a component where the state is managed by the browser, rather than by React. In other words, the component's state is managed by the DOM itself, and the component doesn't have direct access to it.</p>
-                        <p>A controlled component is a component where the state is managed by React, rather than by the browser. In a controlled component, the component's state is managed through React's state management system. </p>
+                        <p>PropTypes allows you to define the type of props that are passed to a component and validate them against the expected type.</p>
+                        <p className='mb-4'>Below are the validators using PropTypes:</p>
+                        <pre className='bg-slate-200 p-5 rounded-md'>
+                        <code>
+                    {`Component.propTypes = {
+                    object_prop_types: PropTypes.object,
+                    string_prop_types: PropTypes.string,
+                };`}
+                            </code>
+                        </pre>
                     </div>
                 </div>
 
@@ -50,8 +58,8 @@ const Blogs = () => {
                     </div>
                     <div className=''>
                         <h3 className=' text-2xl font-semibold mb-4'>What is a custom hook, and why will you create a custom hook?</h3>
-                        <p>An uncontrolled component is a component where the state is managed by the browser, rather than by React. In other words, the component's state is managed by the DOM itself, and the component doesn't have direct access to it.</p>
-                        <p>A controlled component is a component where the state is managed by React, rather than by the browser. In a controlled component, the component's state is managed through React's state management system. </p>
+                        <p>Custom hook is a JavaScript function but they manage state and side effects by utilizing one or more of the built-in React hooks like useState, useEffect, useContext, etc. They can then be imported and used in any component that needs the shared stateful logic.</p>
+                        <p>I will create a custom hook to solve problem like reducing code duplication, sharing stateful logic between components, Managing complex state and side effects etc.</p>
                     </div>
                 </div>
 
