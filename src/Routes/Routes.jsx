@@ -1,9 +1,29 @@
-const { createBrowserRouter } = require("react-router-dom");
+import { createBrowserRouter } from "react-router-dom";
+import Home from "../Layout/Home/Home";
+import Login from "../Layout/Login/Login";
+import Register from "../Layout/Register/Register";
+import Common from "../CommonLayout/Common/Common";
 
 const router = createBrowserRouter([
     {
       path: "/",
-      element: <div className="text-black">Hello world!</div>,
+      element: <Common></Common>,
+      children: [
+        
+        {
+          path: '/',
+          element: <Home></Home>,
+        },
+        {
+          path: '/login',
+          element: <Login></Login>
+        },
+        {
+          path: '/register',
+          element: <Register></Register>
+        },
+
+      ]
     },
   ]);
 
