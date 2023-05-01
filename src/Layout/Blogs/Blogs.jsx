@@ -30,8 +30,8 @@ const Blogs = () => {
                         <h3 className=' text-2xl font-semibold mb-4'>How to validate React props using PropTypes?</h3>
                         <p>PropTypes allows you to define the type of props that are passed to a component and validate them against the expected type.</p>
                         <p className='mb-4'>Below are the validators using PropTypes:</p>
-                        <pre className='bg-slate-200 p-5 rounded-md'>
-                        <code>
+                        <pre className='bg-slate-200 p-5 rounded-md w-full md:w-auto'>
+                        <code className='whitespace-pre-wrap'>
                     {`Component.propTypes = {
                     object_prop_types: PropTypes.object,
                     string_prop_types: PropTypes.string,
