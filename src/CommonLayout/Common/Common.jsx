@@ -8,8 +8,7 @@ const Common = () => {
         <div>
             <Navbar/>
             <div className='min-h-[calc(100vh-336px)]'>
-
-            <Outlet/>
+                <Outlet/>
             </div>
             <Footer/>
         </div>
