@@ -54,7 +54,7 @@ const Login = () => {
     return (
         <div className='w-full max-w-6xl mx-auto mt-10 mb-10 p-5 md:p-0'>
             
-            <div className="flex flex-col mx-auto w-full md:w-[50%] bg-white p-6 rounded-lg shadow-md">
+            <div className="flex flex-col mx-auto w-full md:w-[40%] bg-white p-6 rounded-lg shadow-md">
                 <form onSubmit={handleLogIn} className="">
                     <h2 className="text-2xl font-bold mb-6">Login</h2>
                     <div className="mb-4">
@@ -75,12 +75,12 @@ const Login = () => {
                 <p className='font-semibold text-xl text-gray-700 text-center'>or Login With</p>
 
                 <div className="w-full bg-[#C54238] text-white p-3 rounded-md mt-6 mb-6">
-                    <button onClick={handleGoogleSignIn} className='flex justify-center items-center mx-auto gap-10'>
+                    <button onClick={handleGoogleSignIn} className='flex justify-center items-center mx-auto gap-6'>
                         <FaGoogle/> <span>Sign in With Google</span>
                     </button>
                 </div>
                 <div className="w-full bg-[black] text-white p-3 rounded-md">
-                    <button onClick={handleGithubSignIn} className='flex justify-center mx-auto items-center gap-10'>
+                    <button onClick={handleGithubSignIn} className='flex justify-center mx-auto items-center gap-6'>
                         <FaGithub/> Sign in With Github
                     </button>
                 </div>

@@ -64,7 +64,7 @@ const Register = () => {
     return (
         <div className='w-full max-w-6xl mx-auto mt-10 mb-10 p-5 md:p-0'>
             
-            <div className="flex flex-col justify-center items-center mx-auto w-full md:w-[50%] bg-white p-6 rounded-lg shadow-md">
+            <div className="flex flex-col mx-auto w-full md:w-[40%] bg-white p-6 rounded-lg shadow-md">
                 <form onSubmit={handleRegister} className="">
                     <h2 className="text-2xl font-bold mb-6">Register</h2>
                     <div className="mb-4">
@@ -90,16 +90,16 @@ const Register = () => {
                     <button type="submit" className="w-full bg-blue-500 text-white p-3 rounded-md hover:bg-blue-600 mb-6">Register</button>
                 </form>
 
-                <p className='mb-2 mt-4'>Already have account? <Link to='/login' className='text-blue-500'>Login</Link></p>
-                <p className='font-semibold text-xl text-gray-700'>or Login With</p>
+                <p className='mb-2 mt-4 text-center'>Already have account? <Link to='/login' className='text-blue-500'>Login</Link></p>
+                <p className='font-semibold text-xl text-center text-gray-700'>or Login With</p>
 
-                <div className="w-full md:w-[70%] bg-[#C54238] text-white p-3 rounded-md mt-6 mb-6">
-                    <button onClick={handleGoogleSignIn} className='flex justify-center items-center gap-10'>
+                <div className="w-full bg-[#C54238] text-white p-3 rounded-md mt-6 mb-6">
+                    <button onClick={handleGoogleSignIn} className='flex justify-center mx-auto items-center gap-6'>
                         <FaGoogle/> <span>Sign in With Google</span>
                     </button>
                 </div>
-                <div className="w-full md:w-[70%] bg-[black] text-white p-3 rounded-md">
-                    <button onClick={handleGithubSignIn} className='flex justify-center items-center gap-10'>
+                <div className="w-full bg-[black] text-white p-3 rounded-md">
+                    <button onClick={handleGithubSignIn} className='flex justify-center mx-auto items-center gap-6'>
                         <FaGithub/> Sign in With Github
                     </button>
                 </div>
