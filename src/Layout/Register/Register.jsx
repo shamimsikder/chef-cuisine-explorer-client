@@ -1,11 +1,13 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
+import { AiFillWarning } from 'react-icons/ai';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProviders/AuthProviders';
 
 const Register = () => {
 
     const {createUser, signInWithGoogle, signInWithGithub} = useContext(AuthContext)
+    const [error, setError] = useState("")
 
     const handleRegister = (event) => {
 
@@ -17,10 +19,19 @@ const Register = () => {
         const email = form.email.value
         const password = form.password.value
 
+        if(password.length < 6){
+            setError("The password is less than 6 characters")
+        }
+
+        if(password === "" || email === ""){
+            setError("A user cannot submit empty email and password fields")
+        }
+
         createUser(email, password)
             .then(result => {
                 const loggedUser = result.user
                 console.log(loggedUser)
+                setError("")
             })
             .catch(error => { 
                 console.error(error.message)
@@ -53,7 +64,7 @@ const Register = () => {
     return (
         <div className='w-full max-w-6xl mx-auto mt-10 mb-10 p-5 md:p-0'>
             
-            <div className="flex flex-col justify-center items-center mx-auto w-full md:w-2/3 lg:w-1/3 bg-white p-6 rounded-lg shadow-md">
+            <div className="flex flex-col justify-center items-center mx-auto w-full md:w-[50%] bg-white p-6 rounded-lg shadow-md">
                 <form onSubmit={handleRegister} className="">
                     <h2 className="text-2xl font-bold mb-6">Register</h2>
                     <div className="mb-4">
@@ -66,11 +77,15 @@ const Register = () => {
                     </div>
                     <div className="mb-4">
                         <label htmlFor="email" className="w-full text-gray-700 font-bold mb-2">Email</label>
-                        <input type="email" name="email" placeholder='Enter Your Email' className="w-full border-gray-400 border-2 p-3 rounded-md" required/>
+                        <input type="email" name="email" placeholder='Enter Your Email' className="w-full border-gray-400 border-2 p-3 rounded-md"/>
                     </div>
                     <div className="mb-6">
                         <label htmlFor="password" className="w-full text-gray-700 font-bold mb-2">Password</label>
-                        <input type="password" name="password" placeholder='Enter Your Password' className="w-full border-gray-400 border-2 p-3 rounded-md" required/>
+                        <input type="password" name="password" placeholder='Enter Your Password' className="w-full border-gray-400 border-2 p-3 rounded-md"/>
+                        {error && <span className='flex justify-center items-center gap-4 bg-[#FFECEC] px-3 py-2 text-red-500 rounded-md mt-1'>
+                            <AiFillWarning></AiFillWarning>
+                            <small>{error}</small>
+                        </span>}
                     </div>
                     <button type="submit" className="w-full bg-blue-500 text-white p-3 rounded-md hover:bg-blue-600 mb-6">Register</button>
                 </form>
@@ -78,12 +93,12 @@ const Register = () => {
                 <p className='mb-2 mt-4'>Already have account? <Link to='/login' className='text-blue-500'>Login</Link></p>
                 <p className='font-semibold text-xl text-gray-700'>or Login With</p>
 
-                <div className="w-full md:w-[82%] bg-[#C54238] text-white p-3 rounded-md mt-6 mb-6">
+                <div className="w-full md:w-[70%] bg-[#C54238] text-white p-3 rounded-md mt-6 mb-6">
                     <button onClick={handleGoogleSignIn} className='flex justify-center items-center gap-10'>
                         <FaGoogle/> <span>Sign in With Google</span>
                     </button>
                 </div>
-                <div className="w-full md:w-[82%] bg-[black] text-white p-3 rounded-md">
+                <div className="w-full md:w-[70%] bg-[black] text-white p-3 rounded-md">
                     <button onClick={handleGithubSignIn} className='flex justify-center items-center gap-10'>
                         <FaGithub/> Sign in With Github
                     </button>
