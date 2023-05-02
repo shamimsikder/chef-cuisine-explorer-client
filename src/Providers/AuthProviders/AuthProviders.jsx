@@ -8,6 +8,7 @@ const auth = getAuth(app)
 
 const AuthProviders = ({children}) => {
 
+    const user = "hasha"
     const googleProvider = new GoogleAuthProvider()
     const githubProvider = new GithubAuthProvider()
 
@@ -17,7 +18,7 @@ const AuthProviders = ({children}) => {
 
     }
 
-    const loginUser = () => {
+    const logInUser = () => {
 
         return signInWithEmailAndPassword(auth, email, password)
 
@@ -36,8 +37,10 @@ const AuthProviders = ({children}) => {
     }
 
     const authInfo = {
+
+        user,
         createUser,
-        loginUser,
+        logInUser,
         signInWithGoogle,
         signInWithGithub
 
