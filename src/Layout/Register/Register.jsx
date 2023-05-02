@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Providers/AuthProviders/AuthProviders';
 
 const Register = () => {
+
+    const {createUser} = useContext(AuthContext)
 
     const handleRegister = () => {
 
