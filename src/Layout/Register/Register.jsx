@@ -5,7 +5,7 @@ import { AuthContext } from '../../Providers/AuthProviders/AuthProviders';
 
 const Register = () => {
 
-    const {createUser} = useContext(AuthContext)
+    const {createUser, signInWithGoogle} = useContext(AuthContext)
 
     const handleRegister = (event) => {
 
@@ -26,6 +26,17 @@ const Register = () => {
                 console.error(error.message)
             })
 
+    }
+
+    const handleGoogleSignIn = () => {
+        signInWithGoogle()
+        .then(result => {
+            const loggedUser = result.user
+            console.log(loggedUser)
+        })
+        .catch(error => { 
+            console.error(error.message)
+        })
     }
 
     return (
@@ -53,11 +64,11 @@ const Register = () => {
                     <button type="submit" className="w-full bg-blue-500 text-white p-3 rounded-md hover:bg-blue-600 mb-6">Register</button>
                 </form>
 
-                <p className='mb-2 mt-4'>Already have account? <Link to='/register' className='text-blue-500'>Login</Link></p>
+                <p className='mb-2 mt-4'>Already have account? <Link to='/login' className='text-blue-500'>Login</Link></p>
                 <p className='font-semibold text-xl text-gray-700'>or Login With</p>
 
                 <div className="w-full md:w-[82%] bg-[#C54238] text-white p-3 rounded-md mt-6 mb-6">
-                    <button className='flex justify-center items-center gap-10'>
+                    <button onClick={handleGoogleSignIn} className='flex justify-center items-center gap-10'>
                         <FaGoogle/> <span>Sign in With Google</span>
                     </button>
                 </div>
