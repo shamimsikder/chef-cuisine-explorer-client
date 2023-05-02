@@ -5,7 +5,7 @@ import { AuthContext } from '../../Providers/AuthProviders/AuthProviders';
 
 const Register = () => {
 
-    const {createUser, signInWithGoogle} = useContext(AuthContext)
+    const {createUser, signInWithGoogle, signInWithGithub} = useContext(AuthContext)
 
     const handleRegister = (event) => {
 
@@ -30,13 +30,24 @@ const Register = () => {
 
     const handleGoogleSignIn = () => {
         signInWithGoogle()
-        .then(result => {
-            const loggedUser = result.user
-            console.log(loggedUser)
-        })
-        .catch(error => { 
-            console.error(error.message)
-        })
+            .then(result => {
+                const loggedUser = result.user
+                console.log(loggedUser)
+            })
+            .catch(error => { 
+                console.error(error.message)
+            })
+    }
+
+    const handleGithubSignIn = () => {
+        signInWithGithub()
+            .then(result => {
+                const loggedUser = result.user
+                console.log(loggedUser)
+            })
+            .catch(error => { 
+                console.error(error.message)
+            })
     }
 
     return (
@@ -73,7 +84,7 @@ const Register = () => {
                     </button>
                 </div>
                 <div className="w-full md:w-[82%] bg-[black] text-white p-3 rounded-md">
-                    <button className='flex justify-center items-center gap-10'>
+                    <button onClick={handleGithubSignIn} className='flex justify-center items-center gap-10'>
                         <FaGithub/> Sign in With Github
                     </button>
                 </div>
