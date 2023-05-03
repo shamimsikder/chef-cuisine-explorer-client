@@ -5,6 +5,7 @@ import Register from "../Layout/Register/Register";
 import Common from "../CommonLayout/Common/Common";
 import Blogs from "../Layout/Blogs/Blogs";
 import About from "../Layout/About/About";
+import Error from "../Layout/Error/Error";
 
 const router = createBrowserRouter([
     {
@@ -33,6 +34,10 @@ const router = createBrowserRouter([
           path: '/about',
           element: <About></About>
         },
+        {
+          path: '*',
+          element: <Error></Error>
+        }
 
       ]
     },
