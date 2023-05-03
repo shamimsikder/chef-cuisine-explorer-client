@@ -1,28 +1,40 @@
 import React from 'react';
+import { BsEye } from 'react-icons/bs';
+import { AiFillLike } from 'react-icons/ai';
 
-const ChefsCard = ({chefsData}) => {
-
-    const {chefName, yearsOfExperience, numberOfRecipes, likes, chefPicture} = chefsData
+const ChefsCard = ({ chefsData }) => {
     
+    const { chefName, yearsOfExperience, numberOfRecipes, likes, chefPicture } = chefsData;
+
     return (
-        <div className='mt-10 mb-5'>
-
-            <div className='border-[1px] rounded-md border-[#31B567] p-2'>
-
-                <img className='rounded-md h-[300px] w-[100%] object-cover object-center' src={chefPicture} alt="" />
-
-                <h3 className='mt-2 text-xl font-semibold text-center'>{chefName}</h3>
-                <h3>Experience: {yearsOfExperience}</h3>
-                <h3>Numbers of Recipes: {numberOfRecipes}</h3>
-
-                <p>Likes: {likes}</p>
-
-                <button class="mt-3 px-4 py-2 bg-[#31B567] text-white rounded-md">View Recipes</button>
-
+        <div className="flex flex-col justify-between border border-gray-300 rounded-md p-6 bg-white hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1">
+           
+            <div className="relative w-full h-72 rounded-md overflow-hidden">
+                <img className="absolute inset-0 w-full h-full object-cover object-center" src={chefPicture} />
+            </div>
+           
+            <div className="mt-6">
+            
+                <h3 className="text-xl font-semibold">{chefName}</h3>
+                
+                <div className="flex items-center mt-2 text-gray-600">
+                    <span className="mr-4"> <BsEye className="inline-block mr-1" /> {numberOfRecipes} Recipes </span>
+                    <span> <AiFillLike className="inline-block mr-1" /> {likes} Likes </span>
+                </div>
+                
+                <div className="flex items-center mt-4">
+                    <span className="text-gray-600 font-semibold">Experience:</span>
+                    <span className="ml-2">{yearsOfExperience} years</span>
+                </div>
+            
             </div>
             
+            <button className="mt-6 px-6 py-3 bg-[#31B567] text-white rounded-md hover:bg-green-600 transition duration-300 ease-in-out transform hover:-translate-y-1">
+                View Recipes
+            </button>
+
         </div>
-    );
+  );
 };
 
 export default ChefsCard;

@@ -12,8 +12,8 @@ const Home = () => {
     return (
         <div className=''>
             <Banner></Banner>
-            <h1 className='text-center mt-10 text-5xl font-semibold'>Our Chef's</h1>
-            <div className='w-full max-w-7xl mx-auto gap-5 grid grid-cols-1 md:grid-cols-3 p-5 md:p-0'>
+            <h1 className='text-center mt-10 text-5xl font-semibold'>Meet Our Chefs</h1>
+            <div className='w-full max-w-7xl mx-auto gap-5 grid grid-cols-1 md:grid-cols-3 p-5 md:p-0 mt-10 mb-10'>
 
                 {chefData.map(data => <ChefsCard key={data.id} chefsData={data}></ChefsCard>)}
             
