@@ -2,6 +2,7 @@ import React from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import { FaUtensils, FaClock } from 'react-icons/fa';
 import { AiFillLike } from 'react-icons/ai';
+import LazyLoad from 'react-lazy-load';
 
 const ChefDetails = () => {
   const { id } = useParams();
@@ -9,11 +10,12 @@ const ChefDetails = () => {
 
   return (
     <div className='max-w-7xl mx-auto my-10  p-5 md:p-0'>
+        
         <div className='md:flex md:items-center mt-10 mb-10 md:gap-10'>
             
-            <div className='md:w-1/2'>
+            <LazyLoad height={400} >
                 <img className='w-full h-full object-cover rounded-lg shadow-lg' src={chefPicture} alt='' />
-            </div>
+            </LazyLoad>
             
             <div className='mt-6 md:mt-0 md:w-1/2'>
             
@@ -38,6 +40,9 @@ const ChefDetails = () => {
             </div>
         
         </div>
+
+
+
     </div>
   );
 };
