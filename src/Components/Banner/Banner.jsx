@@ -11,7 +11,7 @@ const Banner = () => {
                     <h1 className='text-4xl font-semibold mb-3'>Experience the Authentic <br /> Taste of Italy</h1>
                     <p>Indulge in the rich flavors and exquisite dishes of Italian cuisine, made with the freshest ingredients and traditional recipes.</p>
                     <p className='mt-3'>Join us for a taste of la dolce vita.</p>
-                    <button class="mt-3 px-4 py-2 bg-[#31B567] text-white rounded-md">Get Started</button>
+                    <button className="mt-6 px-6 py-3 bg-[#31B567] text-white rounded-md hover:bg-green-600 transition duration-300 ease-in-out transform hover:-translate-y-1">Get Started</button>
                 </div>
                 <div>
                     <img className='rounded-md' src={banner} alt="" />
