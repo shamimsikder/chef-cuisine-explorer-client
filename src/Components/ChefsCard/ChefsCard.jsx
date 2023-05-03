@@ -1,10 +1,11 @@
 import React from 'react';
 import { BsEye } from 'react-icons/bs';
 import { AiFillLike } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
 
 const ChefsCard = ({ chefsData }) => {
     
-    const { chefName, yearsOfExperience, numberOfRecipes, likes, chefPicture } = chefsData;
+    const { chefName, yearsOfExperience, numberOfRecipes, likes, chefPicture,id } = chefsData;
 
     return (
         <div className="flex flex-col justify-between border border-gray-300 rounded-md p-6 bg-white hover:shadow-lg transition duration-300 ease-in-out transform hover:-translate-y-1">
@@ -30,7 +31,7 @@ const ChefsCard = ({ chefsData }) => {
             </div>
             
             <button className="mt-6 px-6 py-3 bg-[#31B567] text-white rounded-md hover:bg-green-600 transition duration-300 ease-in-out transform hover:-translate-y-1">
-                View Recipes
+               <Link to={`/chef-details/${id}`}> View Recipes</Link>
             </button>
 
         </div>

@@ -6,6 +6,7 @@ import Common from "../CommonLayout/Common/Common";
 import Blogs from "../Layout/Blogs/Blogs";
 import About from "../Layout/About/About";
 import Error from "../Layout/Error/Error";
+import ChefDetails from "../Layout/ChefDetails/ChefDetails";
 
 const router = createBrowserRouter([
     {
@@ -33,6 +34,11 @@ const router = createBrowserRouter([
         {
           path: '/about',
           element: <About></About>
+        },
+        {
+          path: '/chef-details/:id',
+          element: <ChefDetails></ChefDetails>,
+          loader: ({params}) => fetch(`http://localhost:5000/chefDetails/${params.id}`)
         },
         {
           path: '*',
