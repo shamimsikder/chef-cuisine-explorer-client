@@ -5,8 +5,8 @@ import { GiChickenOven } from 'react-icons/gi';
 
 const WeAreBest = () => {
     return (
-        <div className="w-full max-w-7xl mx-auto my-12">
-            <h1 className="text-4xl text-center font-bold mb-6">Why We Are The Best in Italian Cuisine</h1>
+        <div className="w-full max-w-7xl mt-10 mx-auto my-12">
+            <h1 className="text-5xl text-center font-semibold mb-5">Why We Are The Best in Italian Cuisine</h1>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center">
                     <div className="text-4xl text-[#31B567] mr-4">

@@ -24,7 +24,7 @@ const Home = () => {
                 <WeAreBest></WeAreBest>
             </div>
 
-            <div className='max-w-7xl mx-auto mb-10  p-5 md:p-0'>
+            <div className='max-w-7xl mx-auto mb-10 mt-10 p-5 md:p-0'>
                 <h2 className="text-5xl font-semibold text-center mb-5">Our Customer Reviews</h2>
                 <Review></Review>
             </div>
