@@ -1,0 +1,24 @@
+ [
+        {
+            "id": 1,
+            "name": "John Doe",
+            "date": "2022-04-01",
+            "rating": 5,
+            "comment": "Amazing food and great service. Highly recommend this restaurant!"
+        },
+        {
+            "id": 2,
+            "name": "Jane Smith",
+            "date": "2022-05-10",
+            "rating": 3,
+            "comment": "The food was delicious, but the service was a bit slow. Still worth a visit!"
+        },
+        {
+            "id": 3,
+            "name": "Bob Johnson",
+            "date": "2022-06-15",
+            "rating": 4,
+            "comment": "Decent food, but nothing special. Service was average as well."
+        }
+]
+
