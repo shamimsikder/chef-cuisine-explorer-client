@@ -3,6 +3,7 @@ import { useLoaderData, useParams } from 'react-router-dom';
 import { FaUtensils, FaClock } from 'react-icons/fa';
 import { AiFillLike } from 'react-icons/ai';
 import LazyLoad from 'react-lazy-load';
+import RecipesCard from '../../Components/RecipesCard/RecipesCard';
 
 const ChefDetails = () => {
   const { id } = useParams();
@@ -41,7 +42,9 @@ const ChefDetails = () => {
         
         </div>
 
-
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+            {recipes.map(recipe => <RecipesCard key={recipe.__id} recipe={recipe}></RecipesCard>)}
+        </div>
 
     </div>
   );

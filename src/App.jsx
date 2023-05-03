@@ -1,6 +1,6 @@
 import React from 'react'
 import './App.css'
-import { Button } from 'react-daisyui'
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
 
