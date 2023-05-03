@@ -41,7 +41,7 @@ const ChefDetails = () => {
             </div>
         
         </div>
-
+        <h1 className='text-center text-5xl font-semibold mt-10 mb-10'> Chef's Best Recipes</h1>
         <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
             {recipes.map(recipe => <RecipesCard key={recipe.__id} recipe={recipe}></RecipesCard>)}
         </div>

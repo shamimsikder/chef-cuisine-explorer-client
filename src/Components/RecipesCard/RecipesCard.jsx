@@ -9,10 +9,10 @@ import Rating from 'react-rating-stars-component';
 const RecipesCard = ({recipe}) => {
     const [isFavorite, setIsFavorite] = useState(false);
 
-  const handleFavorite = () => {
-    setIsFavorite(true);
-    toast.success(`${recipe.name} is now your favorite recipe!`);
-  };
+    const handleFavorite = () => {
+        setIsFavorite(true);
+        toast.success(`${recipe.name} is now your favorite recipe!`);
+    };
 
     const {__id, name, image, ingredients, cookingMethod, rating} = recipe
 
