@@ -3,10 +3,11 @@ import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { AiFillWarning } from 'react-icons/ai';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProviders/AuthProviders';
+import { updateProfile } from 'firebase/auth';
 
 const Register = () => {
 
-    const {createUser, signInWithGoogle, signInWithGithub, logOut} = useContext(AuthContext)
+    const {createUser, signInWithGoogle, signInWithGithub, logOut, user} = useContext(AuthContext)
     const [error, setError] = useState("")
 
     const navigate = useNavigate()
@@ -44,11 +45,21 @@ const Register = () => {
                         console.error(error.message)
                     })
 
-                navigate(from, {replace: true})
+                
+                updateProfile(loggedUser,{
+                    displayName: name,
+                    photoURL: photo,
+                })
+                
+            
             })
+
+                
             .catch(error => { 
                 console.error(error.message)
             })
+
+        navigate(from, { replace: true });        
 
     }
 

@@ -111,7 +111,11 @@ const Blogs = () => {
                 </div>
 
             </div>
-            <BlogPdf />
+            
+            <div className='mt-20 text-center'>
+                <BlogPdf />
+            </div>
+
         </div>
     );
 };

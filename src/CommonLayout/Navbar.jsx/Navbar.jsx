@@ -18,6 +18,8 @@ const Navbar = () => {
 
     }
 
+    console.log(user?.email)
+
     return (
         <div className="navbar w-full max-w-7xl mx-auto text-black">
             
@@ -47,8 +49,8 @@ const Navbar = () => {
 
             <div className="navbar-end">
                 {
-                    user && <div className="w-10 rounded-full">
-                              <img src={user.photoURL} tooltip={user.displayName}/>
+                    user && <div className="w-10 h-10 rounded-full mr-5 tooltip tooltip-bottom tooltip-success" data-tip={user?.displayName}>
+                              <img className='rounded-full ' src={user?.photoURL} />
                             </div>
                 }
                 {
