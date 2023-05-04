@@ -47,10 +47,10 @@ const Navbar = () => {
                 </ul>
             </div>
 
-            <div className="navbar-end">
+            <div className="navbar-end flex items-center ">
                 {
                     user && <div className="w-10 h-10 rounded-full mr-5 tooltip tooltip-bottom tooltip-success" data-tip={user?.displayName}>
-                              <img className='rounded-full ' src={user?.photoURL} />
+                              <img className='rounded-full w-10 h-10' src={user?.photoURL} />
                             </div>
                 }
                 {
