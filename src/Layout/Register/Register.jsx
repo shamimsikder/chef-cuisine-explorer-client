@@ -24,16 +24,16 @@ const Register = () => {
         const email = form.email.value
         const password = form.password.value
 
+        
+        if(password === "" || email === ""){
+            setError("A user cannot submit empty email and password fields")
+            return
+        }
+        
         if(password.length < 6){
             setError("The password is less than 6 characters")
             return
         }
-
-        else if(password === "" || email === ""){
-            setError("A user cannot submit empty email and password fields")
-            return
-        }
-
         createUser(email, password)
             .then(result => {
                 const loggedUser = result.user
