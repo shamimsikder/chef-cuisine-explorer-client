@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import { FaUtensils, FaClock } from 'react-icons/fa';
 import { AiFillLike } from 'react-icons/ai';
@@ -6,8 +6,18 @@ import LazyLoad from 'react-lazy-load';
 import RecipesCard from '../../Components/RecipesCard/RecipesCard';
 
 const ChefDetails = () => {
-  const { id } = useParams();
-  const { chefName, chefPicture, recipes, yearsOfExperience, numberOfRecipes, likes, shortBio } = useLoaderData();
+
+    const { id } = useParams();
+    const { chefName, chefPicture, recipes, yearsOfExperience, numberOfRecipes, likes, shortBio } = useLoaderData();
+
+    const [isLoading, setIsLoading] = useState(true);
+
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            setIsLoading(false);
+        }, 500);
+        return () => clearTimeout(timer);
+    }, []);
 
   return (
     <div className='max-w-7xl mx-auto my-10  p-5 md:p-0'>
@@ -41,10 +51,17 @@ const ChefDetails = () => {
             </div>
         
         </div>
+
         <h1 className='text-center text-5xl font-semibold mt-10 mb-10'> Chef's Best Recipes</h1>
-        <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
-            {recipes.map(recipe => <RecipesCard key={recipe.__id} recipe={recipe}></RecipesCard>)}
-        </div>
+        {isLoading ? (
+            <div className="flex justify-center items-center w-full h-full mt-10">
+                <div class="w-12 h-12 rounded-full animate-spin border-2 border-solid border-green-500 border-t-transparent"></div>
+            </div> ) 
+            : (
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+                {recipes.map(recipe => <RecipesCard key={recipe.__id} recipe={recipe}></RecipesCard>)}
+            </div>)
+        }
 
     </div>
   );

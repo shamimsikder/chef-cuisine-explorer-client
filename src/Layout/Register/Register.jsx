@@ -12,7 +12,7 @@ const Register = () => {
 
     const navigate = useNavigate()
     const location = useLocation()
-    const from = location?.state?.from?.pathname || '/login'
+    const from = location.state?.from?.pathname || '/login'
 
     const handleRegister = (event) => {
 

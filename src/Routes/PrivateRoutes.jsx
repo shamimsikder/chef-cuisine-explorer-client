@@ -8,12 +8,9 @@ const PrivateRoutes = ({children}) => {
     const location = useLocation()
 
     if(loading){
-        <button type="button" class="bg-indigo-500 ...">
-            <svg class="animate-spin h-5 w-5 mr-3 ..." viewBox="0 0 24 24">
-                
-            </svg>
-            Processing...
-        </button>
+        <div className="flex justify-center items-center w-full h-full mt-10">
+                <div class="w-12 h-12 rounded-full animate-spin border-2 border-solid border-green-500 border-t-transparent"></div>
+        </div>
     }
 
     if(user){
@@ -22,7 +19,9 @@ const PrivateRoutes = ({children}) => {
 
     }
 
-    return <Navigate state={{from: location.pathname}}></Navigate>
+    console.log(location)
+
+    return <Navigate state={{from: location}} ></Navigate>;
 };
 
 export default PrivateRoutes;

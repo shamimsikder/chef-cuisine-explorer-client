@@ -18,8 +18,6 @@ const Navbar = () => {
 
     }
 
-    console.log(user?.email)
-
     return (
         <div className="navbar w-full max-w-7xl mx-auto text-black">
             
