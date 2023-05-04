@@ -1,13 +1,17 @@
 import React, { useContext, useState } from 'react';
 import { FaGithub, FaGoogle } from 'react-icons/fa';
 import { AiFillWarning } from 'react-icons/ai';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Providers/AuthProviders/AuthProviders';
 
 const Register = () => {
 
-    const {createUser, signInWithGoogle, signInWithGithub} = useContext(AuthContext)
+    const {createUser, signInWithGoogle, signInWithGithub, logOut} = useContext(AuthContext)
     const [error, setError] = useState("")
+
+    const navigate = useNavigate()
+    const location = useLocation()
+    const from = location?.state?.from?.pathname || '/login'
 
     const handleRegister = (event) => {
 
@@ -32,6 +36,15 @@ const Register = () => {
                 const loggedUser = result.user
                 console.log(loggedUser)
                 setError("")
+                form.reset()
+                
+                logOut()
+                    .then()
+                    .catch(error => {
+                        console.error(error.message)
+                    })
+
+                navigate(from, {replace: true})
             })
             .catch(error => { 
                 console.error(error.message)

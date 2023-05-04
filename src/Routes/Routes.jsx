@@ -7,6 +7,7 @@ import Blogs from "../Layout/Blogs/Blogs";
 import About from "../Layout/About/About";
 import Error from "../Layout/Error/Error";
 import ChefDetails from "../Layout/ChefDetails/ChefDetails";
+import PrivateRoutes from "./PrivateRoutes";
 
 const router = createBrowserRouter([
     {
@@ -37,7 +38,7 @@ const router = createBrowserRouter([
         },
         {
           path: '/chef-details/:id',
-          element: <ChefDetails></ChefDetails>,
+          element: <PrivateRoutes> <ChefDetails></ChefDetails> </PrivateRoutes>,
           loader: ({params}) => fetch(`https://chef-cuisine-explorer-server-shamimsikder.vercel.app/chefDetails/${params.id}`)
         },
         {

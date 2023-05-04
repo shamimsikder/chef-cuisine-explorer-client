@@ -1,8 +1,23 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import './NavBar.css'
+import { useContext } from 'react';
+import { AuthContext } from '../../Providers/AuthProviders/AuthProviders';
 
 const Navbar = () => {
+
+    const {user, logOut} =useContext(AuthContext)
+
+    const handleLogOut = () => {
+
+        logOut()
+            .then()
+            .catch(error => {
+                console.error(error.message)
+            })
+
+    }
+
     return (
         <div className="navbar w-full max-w-7xl mx-auto text-black">
             
@@ -31,12 +46,19 @@ const Navbar = () => {
             </div>
 
             <div className="navbar-end">
-                <div className="w-10 rounded-full">
-                    <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                </div>
-                <button className="px-4 py-2 bg-[#31B567] text-white rounded-md">
-                    <Link to='/login'>Login</Link>
-                </button>
+                {
+                    user && <div className="w-10 rounded-full">
+                              <img src={user.photoURL} tooltip={user.displayName}/>
+                            </div>
+                }
+                {
+                    user ? <button onClick={handleLogOut} className="px-4 py-2 bg-[#31B567] text-white rounded-md">
+                                <Link to='/'>Log Out</Link>       
+                            </button>
+                    :       <button className="px-4 py-2 bg-[#31B567] text-white rounded-md">
+                                <Link to='/login'>Login</Link>
+                            </button>
+                }
             </div>
 
         </div>
