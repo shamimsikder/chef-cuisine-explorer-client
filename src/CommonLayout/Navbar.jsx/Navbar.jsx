@@ -31,7 +31,6 @@ const Navbar = () => {
                     <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-sky-50 rounded-box w-52">
                         <li><NavLink className={({ isActive, isPending }) => isActive ? "active-link" : isPending ? "pending" : "" } to='/'>Home</NavLink ></li>
                         <li><NavLink className={({ isActive, isPending }) => isActive ? "active-link" : isPending ? "pending" : "" } to='/about'>About</NavLink ></li>
-                        <li><NavLink className={({ isActive, isPending }) => isActive ? "active-link" : isPending ? "pending" : "" } to='/blog'>Blogs</NavLink ></li>
                         <li><NavLink className={({ isActive, isPending }) => isActive ? "active-link" : isPending ? "pending" : "" } to='/blogs'>Blogs</NavLink ></li>
                     </ul>
                 </div>
@@ -42,7 +41,6 @@ const Navbar = () => {
                 <ul className="menu gap-2 menu-horizontal px-1">
                     <li><NavLink className={({ isActive, isPending }) => isActive ? "active-link" : isPending ? "pending" : "" } to='/'>Home</NavLink></li>
                     <li><NavLink className={({ isActive, isPending }) => isActive ? "active-link" : isPending ? "pending" : "" } to='/about'>About</NavLink></li>
-                    <li><NavLink className={({ isActive, isPending }) => isActive ? "active-link" : isPending ? "pending" : "" } to='/blog'>Blogs</NavLink></li>
                     <li><NavLink className={({ isActive, isPending }) => isActive ? "active-link" : isPending ? "pending" : "" } to='/blogs'>Blogs</NavLink></li>
                 </ul>
             </div>
