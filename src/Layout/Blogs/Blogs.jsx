@@ -45,15 +45,13 @@ const BlogPdf = () => {
       <PDFDownloadLink document={<MyDoc />} fileName="blog-page.pdf">
         <button className="mt-6 px-6 py-3 bg-[#31B567] text-white rounded-md hover:bg-green-600 transition duration-300 ease-in-out transform hover:-translate-y-1">
         <BsFileEarmarkPdf className='inline-block mr-2 mb-1' />
-        Download PDF
+            Download PDF
         </button>
       </PDFDownloadLink>
     );
 };
 
 const Blogs = () => {
-
-    
 
     return (
         <div className='w-full max-w-7xl mx-auto mt-10 mb-10 p-5 md:p-0'>
