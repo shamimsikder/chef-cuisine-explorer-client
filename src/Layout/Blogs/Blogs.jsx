@@ -1,4 +1,5 @@
 import React from 'react';
+import { BsFileEarmarkPdf } from 'react-icons/bs';
 import { PDFDownloadLink, Document, Page, Text,Image } from '@react-pdf/renderer';
 
 
@@ -43,8 +44,9 @@ const BlogPdf = () => {
     return (
       <PDFDownloadLink document={<MyDoc />} fileName="blog-page.pdf">
         <button className="mt-6 px-6 py-3 bg-[#31B567] text-white rounded-md hover:bg-green-600 transition duration-300 ease-in-out transform hover:-translate-y-1">
-              Download PDF
-            </button>
+        <BsFileEarmarkPdf className='inline-block mr-2 mb-1' />
+        Download PDF
+        </button>
       </PDFDownloadLink>
     );
 };
@@ -54,7 +56,12 @@ const Blogs = () => {
     
 
     return (
-        <div className='w-full max-w-6xl mx-auto mt-10 mb-10 p-5 md:p-0'>
+        <div className='w-full max-w-7xl mx-auto mt-10 mb-10 p-5 md:p-0'>
+
+            <div className='text-center'>
+                <h1 className='font-semibold text-3xl'>Welcome to My <span className='text-[#31B567]'>Blogs</span></h1>
+                <BlogPdf />
+            </div>
             
             <div className='grid grid-cols-1 gap-[50px]'>
 
@@ -110,10 +117,6 @@ const Blogs = () => {
                     </div>
                 </div>
 
-            </div>
-            
-            <div className='mt-20 text-center'>
-                <BlogPdf />
             </div>
 
         </div>
