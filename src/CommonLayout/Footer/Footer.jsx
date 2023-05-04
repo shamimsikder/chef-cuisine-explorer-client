@@ -23,7 +23,7 @@ const Footer = () => {
                 </div>
 
                 <div className="">
-                    <p>Copyright © 2023 - All right reserved Shamim Sikder</p>
+                    <p className='text-sm md:text-xl'>Copyright © 2023 - All right reserved Shamim Sikder</p>
                 </div> 
 
             </div>
