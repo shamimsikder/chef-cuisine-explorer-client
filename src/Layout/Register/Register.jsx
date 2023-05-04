@@ -26,18 +26,20 @@ const Register = () => {
 
         if(password.length < 6){
             setError("The password is less than 6 characters")
+            return
         }
 
-        if(password === "" || email === ""){
+        else if(password === "" || email === ""){
             setError("A user cannot submit empty email and password fields")
+            return
         }
 
         createUser(email, password)
             .then(result => {
                 const loggedUser = result.user
                 console.log(loggedUser)
-                setError("")
                 form.reset()
+                setError("")
                 
                 logOut()
                     .then()
@@ -50,21 +52,19 @@ const Register = () => {
                     displayName: name,
                     photoURL: photo,
                 })
-                
-            
+                            
+                navigate(from, { replace: true }); 
             })
 
                 
             .catch(error => { 
                 console.error(error.message)
-            })
-
-        navigate(from, { replace: true });        
-
-    }
-
-    const handleGoogleSignIn = () => {
-        signInWithGoogle()
+            })       
+            
+        }
+        
+        const handleGoogleSignIn = () => {
+            signInWithGoogle()
             .then(result => {
                 const loggedUser = result.user
                 console.log(loggedUser)
@@ -72,8 +72,8 @@ const Register = () => {
             .catch(error => { 
                 console.error(error.message)
             })
-    }
-
+        }
+        
     const handleGithubSignIn = () => {
         signInWithGithub()
             .then(result => {
