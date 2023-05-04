@@ -20,4 +20,4 @@ The technologies used in this project:
 - DaisyUI
 
 ## Live Host Link
-[Chef Cuisine Explorer]()
+[Chef Cuisine Explorer](https://chef-cuisine-explorer.web.app/)
