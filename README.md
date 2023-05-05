@@ -18,6 +18,9 @@ The technologies used in this project:
 - Express JS
 - Firebase
 - DaisyUI
+- React Slick
+- React Lazy Load
+- React-pdf
 
 ## Live Host Link
 [Chef Cuisine Explorer](https://chef-cuisine-explorer.web.app/)
